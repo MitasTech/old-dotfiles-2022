@@ -13,7 +13,9 @@ from typing import List  # noqa: F401from typing import List  # noqa: F401
 
 mod = "mod4"              # Sets mod key to SUPER/WINDOWS
 myTerm = "alacritty"      # My terminal of choice
-myBrowser = "qutebrowser" # My browser of choice
+#myBrowser = "qutebrowser" # My browser of choice
+
+myBrowser = "brave" # My browser of choice
 
 keys = [
          ### The essentials
@@ -289,12 +291,13 @@ colors = [["#282c34", "#282c34"],
           ["#ff6c6b", "#ff6c6b"],
           ["#98be65", "#98be65"],
           ["#da8548", "#da8548"],
-          ["#51afef", "#51afef"],
+          ["#6c84c8", "#6c84c8"],
+         # ["#51afef", "#51afef"],
           ["#c678dd", "#c678dd"],
           ["#46d9ff", "#46d9ff"],
-          ["#c678dd", "#c678dd"]]
+         # ["#c678dd", "#c678dd"]] #light pink
          # ["#a9a1e1", "#a9a1e1"]]
-
+          ["#8e61ab", "#8e61ab"]] #light purple
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
 ##### DEFAULT WIDGET SETTINGS #####
@@ -412,7 +415,7 @@ def init_widgets_list():
                        fontsize = 37
                        ),
               widget.ThermalSensor(
-                       foreground = colors[1],
+                       foreground = colors[2], #[1]
                        background = colors[9],
                        threshold = 90,
                        fmt = 'Temp: {}',
@@ -430,9 +433,9 @@ def init_widgets_list():
                        update_interval = 1800,
                        distro = "Arch_checkupdates",
                        display_format = "Updates: {updates} ",
-                       foreground = colors[1],
-                       colour_have_updates = colors[1],
-                       colour_no_updates = colors[1],
+                       foreground = colors[2], #[1]
+                       colour_have_updates = colors[2], #[1]
+                       colour_no_updates = colors[2], #[1]
                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')},
                        padding = 5,
                        background = colors[6]
@@ -446,7 +449,7 @@ def init_widgets_list():
                        fontsize = 37
                        ),
               widget.Memory(
-                       foreground = colors[1],
+                       foreground = colors[2], #[1]
                        background = colors[9],
                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e htop')},
                        fmt = 'Mem: {}',
@@ -461,7 +464,7 @@ def init_widgets_list():
                        fontsize = 37
                        ),
               widget.Volume(
-                       foreground = colors[1],
+                       foreground = colors[2], #[1]
                        background = colors[6],
                        fmt = 'Vol: {}',
                        padding = 5
@@ -489,7 +492,7 @@ def init_widgets_list():
                        #fontsize = 37
                        #),
               widget.Clock(
-                       foreground = colors[1],
+                       foreground = colors[2], #[1]
                        background = colors[9],
                        format = "%A, %B %d - %H:%M "
                        ),
