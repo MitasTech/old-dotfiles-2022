@@ -1,7 +1,8 @@
 # dotfiles
 
-#QTILE Config
+# XMONAD Configuration
+<img src="https://github.com/MitasTech/dotfiles/blob/main/Xmonad.png" />
+
+# QTILE Configuration
 <img src="https://github.com/MitasTech/dotfiles/blob/main/Qtile.png" />
 
-#XMONAD Config
-<img src="https://github.com/MitasTech/dotfiles/blob/main/Xmonad.png" />
