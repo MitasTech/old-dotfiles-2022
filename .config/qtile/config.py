@@ -396,21 +396,21 @@ def init_widgets_list():
                        text = '',
                        font = "Ubuntu Mono",
                        background = colors[0],
-                       foreground = colors[9],
+                       foreground = colors[6],
                        padding = 0,
                        fontsize = 37
                        ),
              widget.Net(
-                       interface = "enp5s0",
-                       format = 'Net: {down} ↓↑ {up}',
-                       foreground = colors[1],
-                       background = colors[7],
+                   #    interface = "enp5s0",
+                       format = 'Stelios Mitas Net: {down} ↓↑ {up}',
+                       foreground = colors[2],
+                       background = colors[6],
                        padding = 5
                        ),
               widget.TextBox(
                        text = '',
                        font = "Ubuntu Mono",
-                       background = colors[9],
+                       background = colors[6],
                        foreground = colors[9],
                        padding = 0,
                        fontsize = 37
