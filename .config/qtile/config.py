@@ -198,7 +198,7 @@ keys = [
                  lazy.spawn("./dmscripts/scripts/dm-kill"),
                  desc='Kill processes via dmenu'
                  ),
-             Key([], "l",
+             Key([], "q",
                  lazy.spawn("./dmscripts/scripts/dm-logout"),
                  desc='A logout menu'
                  ),
@@ -271,6 +271,7 @@ layouts = [
          bg_color = "1c1f24",
          active_bg = "c678dd",
          active_fg = "000000",
+         #active_fg = "000000",
          inactive_bg = "a9a1e1",
          inactive_fg = "1c1f24",
          padding_left = 0,
@@ -414,6 +415,37 @@ def init_widgets_list():
                        padding = 0,
                        fontsize = 37
                        ),
+              widget.OpenWeather(
+                        app_key = '3430c521da63ca3d913cc91cdd1a8549',
+                        cityid = '146268',
+                        foreground = colors[2],
+                        background = colors[9],
+                        padding = 5
+                        ),  
+              widget.TextBox(
+                       text = '',
+                       font = "Ubuntu Mono",
+                       background = colors[9],
+                       foreground = colors[6],
+                       padding = 0,
+                       fontsize = 37
+                       ),
+              widget.CryptoTicker(
+                        foreground = colors[2],
+                        background = colors[6],
+                        crypto = 'BTC',
+                        symbol = '€',
+                        currency = "EUR",
+                        padding = 5
+                       ),
+            widget.TextBox(
+                       text = '',
+                       font = "Ubuntu Mono",
+                       background = colors[6],
+                       foreground = colors[9],
+                       padding = 0,
+                       fontsize = 37
+                       ),         
               widget.ThermalSensor(
                        foreground = colors[2], #[1]
                        background = colors[9],
