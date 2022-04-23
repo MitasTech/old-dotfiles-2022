@@ -15,7 +15,7 @@ mod = "mod4"              # Sets mod key to SUPER/WINDOWS
 myTerm = "alacritty"      # My terminal of choice
 #myBrowser = "qutebrowser" # My browser of choice
 
-myBrowser = "brave" # My browser of choice
+myBrowser = "brave file://~/CarnelianOS/startpage/index.html" # My browser of choice
 
 keys = [
          ### The essentials
@@ -25,8 +25,6 @@ keys = [
              ),
          Key([mod, "shift"], "Return",
             lazy.spawn("dmenu_run -p 'Run: '"),
-            #lazy.spawn("./dmscripts/scripts/dm-run"),
-
              desc='Run Launcher'
              ),
          Key([mod], "b",
@@ -53,6 +51,13 @@ keys = [
              lazy.spawn("emacsclient -c -a emacs"),
              desc='Doom Emacs'
              ),
+         Key([],"XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 1- unmute")),
+         Key([],"XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 1+ unmute")),
+         Key([],"XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
+
+
+
+
          ### Switch focus to specific monitor (out of three)
          Key([mod], "w",
              lazy.to_screen(0),
@@ -211,7 +216,7 @@ keys = [
                  desc='Search your qutebrowser bookmarks and quickmarks'
                  ),
              Key([], "r",
-                 lazy.spawn("./dmscripts/scripts/dm-reddit"),
+                 lazy.spawn("./dmscripts/scripts/dm-radio"),
                  desc='Search reddit via dmenu'
                  ),
              Key([], "s",
@@ -401,7 +406,7 @@ def init_widgets_list():
                        fontsize = 37
                        ),
              widget.Net(
-                   #    interface = "enp5s0",
+                      # interface = "enp5s0",
                        format = 'Stelios Mitas Net: {down} ↓↑ {up}',
                        foreground = colors[2],
                        background = colors[6],
